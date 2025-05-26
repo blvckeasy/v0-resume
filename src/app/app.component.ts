@@ -53,7 +53,7 @@ export class AppComponent implements OnInit {
             title: 'Bonus-System',
             description:
                 'I worked in the backend and DevOps positions on a bonus system project aimed at encouraging employees to be more responsible in their work.',
-            image: '/github-projects/bonus-system.gif',
+            image: '/github-projects/bonus-system.jpg',
             technologies: ['Node.js', 'MongoDB', 'DDD architecture', 'Docker', 'Express.js', 'TypeScript'],
             liveUrl: 'https://example.com',
             githubUrl: 'https://github.com/blvckeasy/ecommerce',
