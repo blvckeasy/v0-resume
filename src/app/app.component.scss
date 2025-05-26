@@ -453,8 +453,8 @@ body.dark-theme .navbar {
                 gap: 0.5rem;
 
                 .tech-tag {
-                    background: var(--primary-color);
-                    color: white !important;
+                    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.3);
+                    color: black !important;
                     padding: 4px 8px;
                     border-radius: 4px;
                     font-size: 0.8rem;
@@ -917,7 +917,7 @@ body.dark-theme .navbar {
 
                 &:hover {
                     background: var(--primary-color);
-                    color: white !important;
+                    color: rgb(99, 99, 164) !important;
                     transform: translateY(-2px);
                 }
             }
@@ -932,7 +932,7 @@ body.dark-theme .navbar {
             textarea {
                 width: 100%;
                 padding: 12px 16px;
-                border: 2px solid var(--border-color);
+                // border: 2px solid var(--border-color);
                 border-radius: 8px;
                 background: var(--bg-secondary);
                 color: var(--text-primary) !important;

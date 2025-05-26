@@ -1,229 +1,233 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
 
 interface Project {
-  title: string;
-  description: string;
-  image: string;
-  technologies: string[];
-  liveUrl: string;
-  githubUrl: string;
+    title: string;
+    description: string;
+    image: string;
+    technologies: string[];
+    liveUrl: string;
+    githubUrl: string;
 }
 
 interface Skill {
-  name: string;
-  level: number;
+    name: string;
+    level: number;
 }
 
 interface SkillCategory {
-  name: string;
-  skills: Skill[];
+    name: string;
+    skills: Skill[];
 }
 
 interface TimelineItem {
-  date: string;
-  title: string;
-  company: string;
-  description: string;
-  skills: string[];
+    date: string;
+    title: string;
+    company: string;
+    description: string;
+    skills: string[];
 }
 
 interface BlogPost {
-  title: string;
-  excerpt: string;
-  date: Date;
-  category: string;
-  image: string;
-  url: string;
+    title: string;
+    excerpt: string;
+    date: Date;
+    category: string;
+    image: string;
+    url: string;
 }
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  standalone: false,
-  styleUrls: ['./app.component.scss'],
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    standalone: false,
+    styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'portfolio';
-  isDarkMode = false;
+    title = 'portfolio';
+    isDarkMode = false;
 
-  constructor(private renderer: Renderer2) {}
+    constructor(private renderer: Renderer2) {}
 
-  projects: Project[] = [
-    {
-      title: 'E-Commerce Platform',
-      description:
-        'A full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.',
-      image: 'https://picsum.photos/400/250',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/blvckeasy/ecommerce',
-    },
-    {
-      title: 'Task Management App',
-      description:
-        'A collaborative task management application built with Angular and Firebase. Real-time updates and team collaboration features.',
-      image: 'https://picsum.photos/400/250',
-      technologies: ['Angular', 'Firebase', 'TypeScript', 'Material UI'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/blvckeasy/taskmanager',
-    },
-    {
-      title: 'Weather Dashboard',
-      description:
-        'A responsive weather dashboard with location-based forecasts, interactive maps, and data visualization.',
-      image: 'https://picsum.photos/400/250',
-      technologies: [
-        'Vue.js',
-        'Chart.js',
-        'OpenWeather API',
-        'Tailwind CSS',
-      ],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/blvckeasy/weather',
-    },
-  ];
+    projects: Project[] = [
+        {
+            title: 'Bonus-System',
+            description:
+                'I worked in the backend and DevOps positions on a bonus system project aimed at encouraging employees to be more responsible in their work.',
+            image: '/github-projects/bonus-system.gif',
+            technologies: ['Node.js', 'MongoDB', 'DDD architecture', 'Docker', 'Express.js', 'TypeScript'],
+            liveUrl: 'https://example.com',
+            githubUrl: 'https://github.com/blvckeasy/ecommerce',
+        },
+        {
+            title: 'Online Chat App',
+            description:
+                'A real-time messaging project developed for users to exchange messages. I worked on this project as a Full Stack developer using Node.js and Angular 18.',
+            image: '/github-projects/chat-app.jpg',
+            technologies: ['Angular', 'Node.js', 'TypeScript', 'MongoDB', 'Socket.io', 'AWS'],
+            liveUrl: 'https://example.com',
+            githubUrl: 'https://github.com/blvckeasy/chat-app-backend',
+        },
+        {
+            title: 'Captcha',
+            description:
+                'I developed a captcha system using JavaScript and EJS to verify the authenticity of users during authorization.',
+            image: '/github-projects/imnotrobot.png',
+            technologies: [
+                'Javascript',
+                'Node.js',
+                'Express.js',
+                'Swagger',
+            ],
+            liveUrl: 'https://example.com',
+            githubUrl: 'https://github.com/blvckeasy/captcha',
+        },
+    ];
 
-  skillCategories: SkillCategory[] = [
-    {
-      name: 'Frontend',
-      skills: [
-        { name: 'JavaScript', level: 95 },
-        { name: 'TypeScript', level: 90 },
-        { name: 'React', level: 88 },
-        { name: 'Angular', level: 85 },
-        { name: 'Vue.js', level: 80 },
-      ],
-    },
-    {
-      name: 'Backend',
-      skills: [
-        { name: 'Node.js', level: 90 },
-        { name: 'Python', level: 85 },
-        { name: 'Java', level: 75 },
-        { name: 'C#', level: 70 },
-        { name: 'PHP', level: 65 },
-      ],
-    },
-    {
-      name: 'Database & Tools',
-      skills: [
-        { name: 'MongoDB', level: 85 },
-        { name: 'PostgreSQL', level: 80 },
-        { name: 'Docker', level: 75 },
-        { name: 'AWS', level: 70 },
-        { name: 'Git', level: 95 },
-      ],
-    },
-  ];
+    skillCategories: SkillCategory[] = [
+        {
+            name: 'Backend',
+            skills: [
+                { name: 'Node.js', level: 90 },
+                { name: 'Python', level: 85 },
+                { name: 'C', level: 83 },
+            ],
+        },
+        {
+            name: 'Frontend',
+            skills: [
+                { name: 'JavaScript', level: 95 },
+                { name: 'TypeScript', level: 90 },
+                { name: 'Angular', level: 80 },
+            ],
+        },
+        {
+            name: 'Database & Tools',
+            skills: [
+                { name: 'MongoDB', level: 95 },
+                { name: 'SQL', level: 95 },
+                { name: 'Docker', level: 90 },
+                { name: 'AWS', level: 90 },
+                { name: 'Git', level: 95 },
+            ],
+        },
+    ];
 
-  timeline: TimelineItem[] = [
-    {
-      date: '2022 - Present',
-      title: 'Senior Full Stack Developer',
-      company: 'Tech Innovations Inc.',
-      description:
-        'Leading development of scalable web applications using modern technologies. Mentoring junior developers and architecting solutions for enterprise clients.',
-      skills: ['React', 'Node.js', 'AWS', 'MongoDB', 'TypeScript'],
-    },
-    {
-      date: '2020 - 2022',
-      title: 'Frontend Developer',
-      company: 'Digital Solutions Ltd.',
-      description:
-        'Developed responsive web applications and improved user experience across multiple projects. Collaborated with design teams to implement pixel-perfect interfaces.',
-      skills: [
-        'Angular',
-        'JavaScript',
-        'SCSS',
-        'Firebase',
-        'Material Design',
-      ],
-    },
-    {
-      date: '2018 - 2020',
-      title: 'Junior Web Developer',
-      company: 'StartUp Ventures',
-      description:
-        'Built and maintained company websites and web applications. Gained experience in full-stack development and agile methodologies.',
-      skills: ['HTML', 'CSS', 'JavaScript', 'PHP', 'MySQL'],
-    },
-    {
-      date: '2014 - 2018',
-      title: 'Bachelor of Computer Science',
-      company: 'University of Technology',
-      description:
-        'Graduated with honors. Focused on software engineering, algorithms, and web development. Active member of the programming club.',
-      skills: [
-        'Java',
-        'C++',
-        'Data Structures',
-        'Algorithms',
-        'Software Engineering',
-      ],
-    },
-  ];
+    timeline: TimelineItem[] = [
+        {
+            date: 'December 2024 - Present',
+            title: 'Full Stack Developer & DevOps',
+            company: 'TrastPay (TrastBank)',
+            description: `I have worked on three main projects: Tax Integration System, Bonus System, and IFRS (International Financial Reporting Standards).
+  
+  In the Tax Integration Project, I served as both a Backend and DevOps developer. Each client had over 15,000 data records to process. To reduce network load, I developed a system that saves data to the database using a custom algorithm, allowing for efficient reuse later.
+  
+  In the Bonus System Project, I also worked as a Backend and DevOps developer. I was fully involved in designing the system architecture. The system currently serves more than 2,000 employees.
+  
+  In the IFRS Project, I worked as a Full Stack and DevOps developer. I was responsible for both frontend and backend development, as well as deployment and infrastructure-related tasks.`,
+            skills: [
+                'Node.js',
+                'AWS',
+                'PostgreSQL',
+                'Docker',
+                'Ubuntu',
+                'Git',
+                'RabbitMQ',
+                'Express',
+                'IABS Oracle',
+                'MongoDB',
+                'TypeScript',
+            ],
+        },
+        {
+            date: 'February 2023 - March 2025',
+            title: 'Main Programming Instructor',
+            company: 'Najot Ta`lim',
+            description: `Taught beginner-level students programming in depth, focusing on the C and Python programming languages. Covered database integration using MySQL and building desktop applications in Python. Mentored over 350 students, with more than 85% of them successfully completing the course.`,
+            skills: ['C', 'Python 3', 'MySQL', 'Desktop Application'],
+        },
+        {
+            date: 'November 2021 - February 2023',
+            title: 'Assistant Programming Instructor',
+            company: 'Najot Ta`lim',
+            description: `Worked as an assistant instructor teaching C and Python programming languages. Engaged with more than 200 students individually and in groups. Experienced in explaining algorithms, teaching programming fundamentals, and guiding students through practical projects.`,
+            skills: ['C', 'Python 3', 'MySQL', 'Desktop Application'],
+        },
+        {
+            date: '2023 - 2028',
+            title: 'Bachelor of Telecommunications',
+            company: 'Tashkent University of Information Technologies',
+            description: `Studied in the part-time program with a focus on telecommunications, network technologies, digital signal processing, and mobile communication systems.`,
+            skills: [
+                'Artificial Intelligence',
+                'Digital Signal Processing',
+                'Mobile Communication Technologies',
+                'Cisco (CCNA basics)',
+                'Computer Networks',
+            ],
+        },
+    ];
 
-  blogPosts: BlogPost[] = [
-    {
-      title: 'Building Scalable React Applications',
-      excerpt:
-        'Learn best practices for structuring and scaling React applications for enterprise-level projects.',
-      date: new Date('2024-01-15'),
-      category: 'React',
-      image: 'https://picsum.photos/300/200',
-      url: '/blog/scalable-react-applications',
-    },
-    {
-      title: 'Modern CSS Techniques for 2024',
-      excerpt:
-        'Explore the latest CSS features and techniques that will improve your web development workflow.',
-      date: new Date('2024-01-08'),
-      category: 'CSS',
-      image: 'https://picsum.photos/300/200',
-      url: '/blog/modern-css-techniques',
-    },
-    {
-      title: 'TypeScript Best Practices',
-      excerpt:
-        'Discover advanced TypeScript patterns and practices for writing maintainable code.',
-      date: new Date('2024-01-01'),
-      category: 'TypeScript',
-      image: 'https://picsum.photos/300/200',
-      url: '/blog/typescript-best-practices',
-    },
-  ];
+    blogPosts: BlogPost[] = [
+        {
+            title: 'Dopamine, Dopamine Detox.',
+            excerpt:
+                'Ever wondered why it’s so hard to focus on studying but so easy to binge short videos for hours? Discover how dopamine shapes your motivation — and how a simple dopamine detox can help you regain control of your time, focus, and joy in real-life goals.',
+            date: new Date('2024-11-03'),
+            category: 'CSS',
+            image: '/blog-posts/dopamine-detox.jpg',
+            url: 'https://telegra.ph/Dofomin-nima-Dofomin-detoks-11-03',
+        },
+        {
+            title: 'The secret was revealed during deployment...',
+            excerpt:
+                '“Works on my machine” — the classic developer headache. Docker promised to solve this, right? But what if it still breaks on the server? In this post, I share a real story from my own project that exposed a hidden pitfall in how we use Docker — and how to fix it before it ruins your deployment.',
+            date: new Date('2025-05-01'),
+            category: 'React',
+            image: '/blog-posts/docker-bilan-bizni-aldashganmi.jpg',
+            url: 'https://telegra.ph/Docker-bilan-bizni-aldashganmi-05-01',
+        },
+        {
+            title: 'TypeScript Best Practices',
+            excerpt:
+                'Discover advanced TypeScript patterns and practices for writing maintainable code.',
+            date: new Date('2024-01-01'),
+            category: 'TypeScript',
+            image: 'https://blog.theodo.com/_astro/ts_logo.BstCNrTU_1Dbxpr.webp',
+            url: '/blog/typescript-best-practices',
+        },
+    ];
 
-  ngOnInit() {
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    this.isDarkMode = savedTheme === 'dark';
-    this.updateTheme();
-  }
-
-  toggleTheme() {
-    this.isDarkMode = !this.isDarkMode;
-    this.updateTheme();
-    localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
-  }
-
-  private updateTheme() {
-    if (this.isDarkMode) {
-      this.renderer.addClass(document.body, 'dark-theme');
-    } else {
-      this.renderer.removeClass(document.body, 'dark-theme');
+    ngOnInit() {
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        this.isDarkMode = savedTheme === 'dark';
+        this.updateTheme();
     }
-  }
 
-  scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    toggleTheme() {
+        this.isDarkMode = !this.isDarkMode;
+        this.updateTheme();
+        localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
     }
-  }
 
-  onSubmit() {
-    // Handle form submission
-    console.log('Form submitted');
-    // You can integrate with a backend service or email service here
-  }
+    private updateTheme() {
+        if (this.isDarkMode) {
+            this.renderer.addClass(document.body, 'dark-theme');
+        } else {
+            this.renderer.removeClass(document.body, 'dark-theme');
+        }
+    }
+
+    scrollToSection(sectionId: string) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    onSubmit() {
+        // Handle form submission
+        console.log('Form submitted');
+        // You can integrate with a backend service or email service here
+    }
 }
