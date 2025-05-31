@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
             liveUrl: 'https://example.com',
             githubUrl: 'https://github.com/blvckeasy/ecommerce',
         },
-        {
+        {   
             title: 'Online Chat App',
             description:
                 'A real-time messaging project developed for users to exchange messages. I worked on this project as a Full Stack developer using Node.js and Angular 18.',
