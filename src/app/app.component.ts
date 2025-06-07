@@ -115,7 +115,7 @@ export class AppComponent implements OnInit {
     timeline: TimelineItem[] = [
         {
             date: 'December 2024 - Present',
-            title: 'Full Stack Developer & DevOps',
+            title: 'Backend Engineer & DevOps',
             company: 'TrastPay (TrastBank)',
             description: `I have worked on three main projects: Tax Integration System, Bonus System, and IFRS (International Financial Reporting Standards).
   
